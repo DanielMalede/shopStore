@@ -16,7 +16,7 @@ const getSportEquipment = async (req, res) => {
 
 const addSportEquipment = async (req, res) => {
   await sportEquipment
-    .insertMany(req.body.data)
+    .insertMany(req.body.equipment)
     .then(() => {
       res
         .status(200)

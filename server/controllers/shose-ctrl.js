@@ -15,8 +15,7 @@ const getShoes = async (req, res) => {
 };
 
 const addShoes = async (req, res) => {
-  await shoesModel
-    .insertMany(req.body.data)
+  await shoesModel.insertMany(req.body.shoes)
     .then(() => {
       res.status(200).json({ success: true, message: "shoes has added" });
     })
