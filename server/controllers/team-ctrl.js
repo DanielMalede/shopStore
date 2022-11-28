@@ -16,7 +16,7 @@ const getTeam = async (req, res) => {
 
 const addTeam = async (req, res) => {
   await teamModel
-    .insertMany(req.body.team)
+    .insertMany(req.body.teams)
     .then(() => {
       res
         .status(200)

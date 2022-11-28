@@ -41,7 +41,7 @@ const getClothesById = async (req, res) => {
 
 const updateClothe = async (req, res) => {
   await clothesModel
-    .findByIdAndUpdate(req.params.id, req.body.id)
+    .findByIdAndUpdate(req.params.id, req.body.clothe)
     .then((result) => {
       res.status(200).json({ success: true, message: result });
     })
@@ -53,7 +53,7 @@ const updateClothe = async (req, res) => {
 const deleteClothe = async (req, res) => {
   await clothesModel
     .findByIdAndDelete(req.body.id || req.params.id)
-    .then((result) => res.status(300).json({ success: true }))
+    .then(() => res.status(300).json({ success: true }))
     .catch((err) => res.status(400).json({ success: false, err }));
 };
 module.exports = {
